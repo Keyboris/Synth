@@ -1,0 +1,11 @@
+package synth;
+
+import static org.lwjgl.openal.AL10.*;
+
+public class OpenALRuntimeException extends RuntimeException{
+	OpenALRuntimeException(int errorCode){
+		super("Internal " + (errorCode == AL_INVALID_NAME ? "invalid name" : errorCode == AL_INVALID_ENUM ? "invalid enum" : 
+			errorCode == AL_INVALID_VALUE ? "invalid value" : errorCode == AL_INVALID_OPERATION ? "invalid operation" : "unknown" ) + " openal "
+					+ "exception" );
+	}
+}
